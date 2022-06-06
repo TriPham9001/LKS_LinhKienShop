@@ -1,0 +1,42 @@
+<resources>
+
+    <string name="app_name">Linh Kien Shop</string>
+    <string name="slogan">Better by LinhKienShop</string>
+
+
+    <!--  MENU NAV BOTTOM  -->
+    <string name="menu_home">HOME</string>
+    <string name="menu_shop">SHOP</string>
+    <string name="menu_favorite">FAVORITE</string>
+    <string name="menu_person">PERSON</string>
+
+    <!--  Product  -->
+    <string name="name_product">Phụ kiện máy tính</string>
+    <string name="prince">20000</string>
+    <string name="sold">Đã bán: </string>
+    <string name="number">15</string>
+    <string name="d">₫</string>
+    <!--Person-->
+    <string name="account_settings">Thiết lập tài khoản</string>
+    <string name="reset_password">Đặt lại mật khẩu</string>
+    <string name="name_person">Tri</string>
+    <string name="id_email">tri.pham1101@gmail.com</string>
+    <string name="log_out">Đăng xuất</string>
+    <string name="cart">Giỏ hàng</string>
+    <string name="oder">Đơn hàng</string>
+    <string name="pay">Thanh toán</string>
+    <string name="transaction_history">Lịch sử giao dịch</string>
+    <!--Detail-->
+    <string name="add_to_card">Thêm vào giỏ hàng</string>
+    <string name="buy_now">Mua ngay</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_up">Sign-Up</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="re_enter_your_password">Re-enter your password</string>
+    <string name="search">Tìm kiếm…...</string>
+    <string name="hot_sale">Khuyến mãi cực hot</string>
+    <string name="describe">Mô tả: Chipset: Intel® H81 CPU hỗ trợ: for 4th Generation Corei7/ Core i5/Core i3/Pentium/Celeron Hỗ trợ Intel® 22 nm Socket: Intel® Socket 1150 Khe cắm: 1 x PCIe x16 2 x PCIe 2.0 x1 other</string>
+
+
+</resources>
