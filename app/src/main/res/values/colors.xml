@@ -37,6 +37,7 @@
     <color name="colorBlack30">#4D222324</color>
     <color name="colorBlack40">#66222324</color>
     <color name="colorBlack100">#222324</color>
+    <color name="colorBg">#F8F8F8</color>
 
     <color name="colorPrimary">#F1A90E</color>
     <color name="colorGray95">#F2F2F2</color>

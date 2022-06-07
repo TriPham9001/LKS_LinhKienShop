@@ -50,4 +50,5 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.google.firebase:firebase-database:20.0.2'
+    implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
 }

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chauthai.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeRevealLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_10"
+    app:dragEdge="right"
+    app:mode="same_level">
+
+    <RelativeLayout
+        android:id="@+id/layoutDelete"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:background="@drawable/bg_delete"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"
+            />
+    </RelativeLayout>
+
+    <!-- Your main layout here -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_favorite_product"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/dp_10">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rlImg"
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="@dimen/dp_120"
+                android:layout_margin="@dimen/dp_10"
+                android:background="@drawable/item_img_product"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgFavoriteProduct"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="@dimen/dp_100"
+                    android:src="@drawable/cpu" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toEndOf="@+id/rlImg">
+
+                <TextView
+                    android:id="@+id/txtNameFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="@string/name_product"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_12"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtPriceFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtNameFavorite"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="@string/prince"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_10" />
+
+                <TextView
+                    android:id="@+id/txtd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtNameFavorite"
+                    android:layout_marginStart="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_toEndOf="@+id/txtPriceFavorite"
+                    android:text="@string/d"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_10" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</com.chauthai.swipereveallayout.SwipeRevealLayout>
