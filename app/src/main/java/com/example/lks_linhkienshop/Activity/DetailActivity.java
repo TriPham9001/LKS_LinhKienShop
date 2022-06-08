@@ -1,11 +1,16 @@
 package com.example.lks_linhkienshop.Activity;
 
+import android.Manifest;
+import android.content.Context;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -19,9 +24,8 @@ public class DetailActivity extends AppCompatActivity {
     private ImageView imgProduct;
     private Button btnAddToCard;
 
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         txtName = findViewById(R.id.txtDetailName);
@@ -29,6 +33,7 @@ public class DetailActivity extends AppCompatActivity {
         txtPrice = findViewById(R.id.txtDetailPrice);
         txtDescribe = findViewById(R.id.txtDescribeDetail);
         btnAddToCard = findViewById(R.id.btnAddToCard);
+
         btnAddToCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +43,6 @@ public class DetailActivity extends AppCompatActivity {
 
             }
         });
-
         int img = getIntent().getIntExtra("img", 0);
         String name = getIntent().getStringExtra("name");
         String price = getIntent().getStringExtra("price");
@@ -48,9 +52,9 @@ public class DetailActivity extends AppCompatActivity {
         txtName.setText(name);
         txtPrice.setText(price);
         txtDescribe.setText(describe);
-
-
     }
+
+
 
 
 }

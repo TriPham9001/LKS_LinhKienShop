@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.TransactionHistoryActivity"
-    android:background="@color/colorBlue">
+    tools:context=".Fragment.OrderFragment"
+    android:background="@color/colorRed">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trang thanh Lich su giao dich"
+        android:text="Trang thanh don hang"
         android:textStyle="bold"
         android:textSize="@dimen/sp_20"
         android:textColor="@color/white"

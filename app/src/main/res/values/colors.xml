@@ -41,6 +41,8 @@
 
     <color name="colorPrimary">#F1A90E</color>
     <color name="colorGray95">#F2F2F2</color>
+    <color name="colorEditText">#B1B1B1</color>
+    <color name="colerPriceBill">#EA4335</color>
 
 
 </resources>

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LKS_LinhKienShop">
         <activity
+            android:name=".Fragment.SetAccountFragment"
+            android:exported="true" />
+        <activity
             android:name=".Activity.LoginActivity"
             android:exported="true" />
         <activity
@@ -19,16 +22,16 @@
             android:name=".Activity.DetailActivity"
             android:exported="true" />
         <activity
-            android:name=".Activity.OrderActivity"
+            android:name=".Fragment.OrderFragment"
             android:exported="true" />
         <activity
-            android:name=".Activity.PayActivity"
+            android:name=".Fragment.PayFragment"
             android:exported="true" />
         <activity
             android:name=".Activity.SignUpActivity"
             android:exported="true" />
         <activity
-            android:name=".Activity.TransactionHistoryActivity"
+            android:name=".Fragment.TransactionHistoryFragment"
             android:exported="true" />
         <activity
             android:name=".Activity.SplashScreenActivity"

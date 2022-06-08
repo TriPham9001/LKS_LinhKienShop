@@ -37,6 +37,17 @@
     <string name="search">Tìm kiếm…...</string>
     <string name="hot_sale">Khuyến mãi cực hot</string>
     <string name="describe">Mô tả: Chipset: Intel® H81 CPU hỗ trợ: for 4th Generation Corei7/ Core i5/Core i3/Pentium/Celeron Hỗ trợ Intel® 22 nm Socket: Intel® Socket 1150 Khe cắm: 1 x PCIe x16 2 x PCIe 2.0 x1 other</string>
+    <string name="set_password">Thiết lập tài khoản</string>
+    <string name="user_name">Tên người dùng</string>
+    <string name="address">Địa chỉ</string>
+    <string name="txt_numble">Số điện thoại</string>
+    <string name="txt_change">Thay đổi</string>
+    <string name="enter_your_new_password">Nhập mật khẩu mới</string>
+    <string name="re_your_new_password">Lặp lại mật khẩu mới</string>
+    <string name="change_password">Đổi mật khẩu</string>
+    <string name="subtotal">Tổng phụ</string>
+    <string name="total_bill">Tổng hoá đơn</string>
+    <string name="txt_pay">Thanh Toán</string>
 
 
 </resources>

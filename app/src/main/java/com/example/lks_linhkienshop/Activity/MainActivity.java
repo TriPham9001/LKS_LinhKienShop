@@ -2,6 +2,7 @@ package com.example.lks_linhkienshop.Activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,15 +16,20 @@ import com.example.lks_linhkienshop.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
+    private BottomNavigationView botNav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        BottomNavigationView botNav = findViewById(R.id.botNavMenu);
+        botNav = findViewById(R.id.botNavMenu);
         botNav.setOnNavigationItemSelectedListener(navListener);
+
+    }
+    public void hideBotomNav(){
+        botNav.setVisibility(View.GONE);
+    }
+    public void showBottomNav(){
+        botNav.setVisibility(View.VISIBLE);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -44,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_person:
                             selFragment = new PersonFragment();
                             break;
+
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fagContainer, selFragment).commit();
                     return true;

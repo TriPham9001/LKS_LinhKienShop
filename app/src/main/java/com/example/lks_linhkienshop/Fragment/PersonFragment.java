@@ -12,14 +12,13 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.lks_linhkienshop.Activity.OrderActivity;
-import com.example.lks_linhkienshop.Activity.PayActivity;
-import com.example.lks_linhkienshop.Activity.TransactionHistoryActivity;
+import com.example.lks_linhkienshop.Activity.LoginActivity;
 import com.example.lks_linhkienshop.R;
 
 public class PersonFragment extends Fragment {
     private ConstraintLayout clShop, clPay, clOder, clHistory, clResertPass, clAccountSett;
     private View btnLogOut;
+
 
     @Nullable
     @Override
@@ -33,57 +32,92 @@ public class PersonFragment extends Fragment {
         clAccountSett = view.findViewById(R.id.layoutAccountSettings);
         btnLogOut = view.findViewById(R.id.btnLogOut);
 
-
         onClickCl(view);
 
         return view;
     }
 
     public void onClickCl(View view) {
+        clAccountSett.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSetAccountActivity(view);
+            }
+        });
         clShop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gotoShopFragment(view);
+                goToShopFragment(view);
             }
         });
         clPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gotoPayActivity(view);
+                goToPayActivity(view);
             }
         });
         clOder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gotoOrderActivity(view);
+                goToOrderActivity(view);
             }
         });
         clHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gotoHistoryActivity(view);
+                goToHistoryActivity(view);
+            }
+        });
+        clResertPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToResPass(view);
+            }
+        });
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToLogin(view);
             }
         });
     }
 
-    public void gotoShopFragment(View view) {
+    public void goToShopFragment(View view) {
         Fragment f = new ShopFragment();
         FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
         fm.replace(R.id.fagContainer, f).commit();
     }
 
-    public void gotoPayActivity(View view) {
-        Intent i = new Intent(getActivity(), PayActivity.class);
-        startActivity(i);
+    public void goToPayActivity(View view) {
+        Fragment f = new PayFragment();
+        FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+        fm.replace(R.id.fagContainer, f).commit();
     }
 
-    public void gotoHistoryActivity(View view) {
-        Intent i = new Intent(getActivity(), TransactionHistoryActivity.class);
-        startActivity(i);
+    public void goToSetAccountActivity(View view) {
+        Fragment f = new SetAccountFragment();
+        FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+        fm.replace(R.id.fagContainer, f).commit();
     }
 
-    public void gotoOrderActivity(View view) {
-        Intent i = new Intent(getActivity(), OrderActivity.class);
+    public void goToHistoryActivity(View view) {
+        Fragment f = new TransactionHistoryFragment();
+        FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+        fm.replace(R.id.fagContainer, f).commit();
+    }
+
+    public void goToOrderActivity(View view) {
+        Fragment f = new OrderFragment();
+        FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+        fm.replace(R.id.fagContainer, f).commit();
+    }
+    public void goToResPass(View view) {
+        Fragment f = new ChangePasswordFragment();
+        FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+        fm.replace(R.id.fagContainer, f).commit();
+    }
+    public void goToLogin(View view) {
+        Intent i = new Intent(getActivity().getApplication(),LoginActivity.class);
         startActivity(i);
     }
 
