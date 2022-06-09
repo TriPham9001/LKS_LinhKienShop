@@ -1,9 +1,13 @@
 package com.example.lks_linhkienshop.Fragment;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -15,12 +19,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lks_linhkienshop.Activity.MainActivity;
 import com.example.lks_linhkienshop.Adapter.VoucherAdapter;
 import com.example.lks_linhkienshop.Model.Voucher;
 import com.example.lks_linhkienshop.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PayFragment extends Fragment {
@@ -29,8 +34,12 @@ public class PayFragment extends Fragment {
     private Button btnVoucher, btnOder;
     private CheckBox chbMastercard, chbPaymentOnDelivery;
     private BottomSheetDialog dialogVoucher;
-    List<Voucher> itemListVoucher;
+    private List<Voucher> itemListVoucher;
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        ((MainActivity) getActivity()).hideBotomNav();
+    }
 
     @Nullable
     @Override
@@ -67,21 +76,28 @@ public class PayFragment extends Fragment {
         Button btnExit = view.findViewById(R.id.btnExit);
         RecyclerView rcvListVoucher = view.findViewById(R.id.rcvListVoucher);
 
-
+        rcvListVoucher.setHasFixedSize(true);
+        rcvListVoucher.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        rcvListVoucher.setAdapter(new VoucherAdapter(initDataVoucher()));
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialogVoucher.dismiss();
             }
         });
-
         dialogVoucher.setContentView(view);
         dialogVoucher.show();
 
 
     }
 
-
+    private List<Voucher> initDataVoucher() {
+        itemListVoucher = new ArrayList<>();
+        itemListVoucher.add(new Voucher("200000"));
+        itemListVoucher.add(new Voucher("200000"));
+        itemListVoucher.add(new Voucher("200000"));
+        return itemListVoucher;
+    }
 
 
 }

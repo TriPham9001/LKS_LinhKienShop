@@ -43,7 +43,6 @@ public class ShopFragment extends Fragment {
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).hideBotomNav();
                 Fragment f = new PayFragment();
                 FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
                 fm.replace(R.id.fragmentShop, f).commit();
