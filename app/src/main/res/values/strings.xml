@@ -58,6 +58,8 @@
     <string name="txt_voucher">Voucher</string>
     <string name="txt_minus">-</string>
     <string name="txt_order">Đặt hàng</string>
+    <string name="exit">Thoát</string>
+    <string name="discount_voucher">Voucher giảm</string>
 
 
 </resources>

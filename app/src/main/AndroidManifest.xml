@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.lks_linhkienshop">
 
     <application
@@ -10,8 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LKS_LinhKienShop">
         <activity
+            android:name=".Dialog.DialogVoucher"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
+        <activity
             android:name=".Fragment.SetAccountFragment"
-            android:exported="true" />
+            android:exported="true"
+            tools:ignore="Instantiatable"/>
         <activity
             android:name=".Activity.LoginActivity"
             android:exported="true" />
@@ -23,16 +29,19 @@
             android:exported="true" />
         <activity
             android:name=".Fragment.OrderFragment"
-            android:exported="true" />
+            android:exported="true"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".Fragment.PayFragment"
-            android:exported="true" />
+            android:exported="true"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".Activity.SignUpActivity"
             android:exported="true" />
         <activity
             android:name=".Fragment.TransactionHistoryFragment"
-            android:exported="true" />
+            android:exported="true"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".Activity.SplashScreenActivity"
             android:exported="true">

@@ -76,6 +76,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dp_22"
@@ -152,7 +153,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView3">
 
                     <CheckBox
-                        android:id="@+id/chkMasterCard"
+                        android:id="@+id/chbMasterCard"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/dp_10"
@@ -183,7 +184,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/constraintLayout10">
 
                     <CheckBox
-                        android:id="@+id/chkPaymentOnDelivery"
+                        android:id="@+id/chbPaymentOnDelivery"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:button="@drawable/ic_checkbox"
@@ -241,6 +242,7 @@
                         android:textColor="@color/colerPriceBill"
                         android:textSize="@dimen/sp_12"
                         android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
