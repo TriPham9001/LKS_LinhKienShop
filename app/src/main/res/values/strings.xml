@@ -48,6 +48,16 @@
     <string name="subtotal">Tổng phụ</string>
     <string name="total_bill">Tổng hoá đơn</string>
     <string name="txt_pay">Thanh Toán</string>
+    <string name="pay_bill">Thanh toán hoá đơn</string>
+    <string name="delivery_address">Địa chỉ nhận hàng</string>
+    <string name="destination">Bảo Lộc</string>
+    <string name="payment_methods">Phương thức thanh toán</string>
+    <string name="mastercard">Mastercard</string>
+    <string name="payment_on_delivery">Thanh toán khi nhận hàng</string>
+    <string name="txt_delivery_charges">Phí vận chuyển</string>
+    <string name="txt_voucher">Voucher</string>
+    <string name="txt_minus">-</string>
+    <string name="txt_order">Đặt hàng</string>
 
 
 </resources>
