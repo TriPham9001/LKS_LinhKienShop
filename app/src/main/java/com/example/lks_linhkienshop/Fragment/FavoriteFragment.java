@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lks_linhkienshop.Activity.MainActivity;
 import com.example.lks_linhkienshop.Adapter.FavoriteAdapter;
 import com.example.lks_linhkienshop.Model.Product;
 import com.example.lks_linhkienshop.R;
@@ -36,7 +37,6 @@ public class FavoriteFragment extends Fragment {
         return view;
 
     }
-
 
     public List<Product> initDataProduct() {
         itemListProduct = new ArrayList<>();

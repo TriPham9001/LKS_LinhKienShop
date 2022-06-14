@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.lks_linhkienshop.Activity.LoginActivity;
+import com.example.lks_linhkienshop.Activity.MainActivity;
 import com.example.lks_linhkienshop.R;
 
 public class PersonFragment extends Fragment {

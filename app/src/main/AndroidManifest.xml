@@ -33,7 +33,6 @@
             tools:ignore="Instantiatable" />
         <activity
             android:name=".Fragment.PayFragment"
-            android:exported="true"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".Activity.SignUpActivity"

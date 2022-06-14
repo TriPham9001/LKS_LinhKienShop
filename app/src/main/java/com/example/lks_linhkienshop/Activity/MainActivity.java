@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.example.lks_linhkienshop.Fragment.FavoriteFragment;
@@ -16,21 +17,25 @@ import com.example.lks_linhkienshop.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+
     private BottomNavigationView botNav;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         botNav = findViewById(R.id.botNavMenu);
         botNav.setOnNavigationItemSelectedListener(navListener);
-
     }
-    public void hideBotomNav(){
+
+    public void hideBotomNav() {
         botNav.setVisibility(View.GONE);
     }
-    public void showBottomNav(){
+
+    public void showBottomNav() {
         botNav.setVisibility(View.VISIBLE);
     }
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -56,4 +61,5 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
+
 }
