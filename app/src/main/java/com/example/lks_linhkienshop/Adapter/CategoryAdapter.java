@@ -33,8 +33,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         if (category == null){
             return;
         }
-        holder.imgCategory.setImageResource(category.getImage());
-        holder.txtName.setText(category.getName());
+        holder.txtTenTheLoai.setText(category.getTenTheLoai());
 
     }
 
@@ -47,13 +46,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     }
 
     public class CategoryViewAdapter extends RecyclerView.ViewHolder{
-        private CircleImageView imgCategory;
-        private TextView txtName;
+        private TextView txtTenTheLoai;
 
         public CategoryViewAdapter(@NonNull View iv) {
             super(iv);
-            imgCategory = iv.findViewById(R.id.imgCategory);
-            txtName = iv.findViewById(R.id.txtName);
+            txtTenTheLoai = iv.findViewById(R.id.txtTenTheLoai);
         }
 
     }

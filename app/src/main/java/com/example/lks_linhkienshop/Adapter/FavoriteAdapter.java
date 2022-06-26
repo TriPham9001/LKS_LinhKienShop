@@ -38,9 +38,8 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
         if (product == null) {
             return;
         }
-        holder.imgFavorite.setImageResource(product.getImage());
-        holder.txtNameFavorite.setText(product.getName());
-        holder.txtPriceFavorite.setText(product.getPrice());
+        holder.txtNameFavorite.setText(product.getTenSanPham());
+        holder.txtPriceFavorite.setText((String.valueOf(product.getDonGia())));
 
         holder.layoutDelete.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -12,7 +12,7 @@
 
     <!--  Product  -->
     <string name="name_product">Phụ kiện máy tính</string>
-    <string name="prince">20000</string>
+    <string name="price">20000</string>
     <string name="sold">Đã bán: </string>
     <string name="number">15</string>
     <string name="d">₫</string>
@@ -60,6 +60,9 @@
     <string name="txt_order">Đặt hàng</string>
     <string name="exit">Thoát</string>
     <string name="discount_voucher">Voucher giảm</string>
+    <string name="txt_total_bill">Tổng cộng</string>
+    <string name="x">x</string>
+    <string name="no_account">Bạn Chưa Có Tài Khoản</string>
 
 
 </resources>

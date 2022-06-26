@@ -37,9 +37,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         if (product == null) {
             return;
         }
-        holder.imgProduct.setImageResource(product.getImage());
-        holder.txtName.setText(product.getName());
-        holder.txtPrince.setText(product.getPrice());
+        holder.imgProduct.setImageResource(product.getId());
+        holder.txtName.setText(product.getTenSanPham());
+        holder.txtDonGia.setText(String.valueOf(product.getDonGia()));
     }
 
 
@@ -53,14 +53,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     public class ProductViewAdapter extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView imgProduct;
-        private TextView txtName, txtPrince, txtDescribe;
+        private TextView txtName, txtDonGia, txtMoTa;
 
         public ProductViewAdapter(@NonNull View iv) {
             super(iv);
             imgProduct = iv.findViewById(R.id.imgProduct);
             txtName = iv.findViewById(R.id.txtNameProduct);
-            txtPrince = iv.findViewById(R.id.txtPrinceProduct);
-            txtDescribe = iv.findViewById(R.id.txtDescribeProduct);
+            txtDonGia = iv.findViewById(R.id.txtDonGia);
+            txtMoTa = iv.findViewById(R.id.txtMoTa);
             iv.setOnClickListener(this);
         }
 
@@ -68,10 +68,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         public void onClick(View view) {
             int position = getAdapterPosition();
             Intent i = new Intent(view.getContext(), DetailActivity.class);
-            i.putExtra("name", mListProduct.get(position).getName());
-            i.putExtra("img", mListProduct.get(position).getImage());
-            i.putExtra("price", mListProduct.get(position).getPrice());
-            i.putExtra("describe",mListProduct.get(position).getDescribe());
+            i.putExtra("id",mListProduct.get(position).getId());
+            i.putExtra("tenSanPham", mListProduct.get(position).getTenSanPham());
+            i.putExtra("donGia", mListProduct.get(position).getDonGia());
+            i.putExtra("moTa",mListProduct.get(position).getMoTa());
             view.getContext().startActivity(i);
 
 

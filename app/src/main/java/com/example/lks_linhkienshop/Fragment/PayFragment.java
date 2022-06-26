@@ -103,9 +103,10 @@ public class PayFragment extends Fragment {
 
     private List<Voucher> initDataVoucher() {
         itemListVoucher = new ArrayList<>();
-        itemListVoucher.add(new Voucher("200000"));
-        itemListVoucher.add(new Voucher("200000"));
-        itemListVoucher.add(new Voucher("200000"));
+//        itemListVoucher.add(new Voucher(1,1,"haha",200000,2022-10-12));
+//        itemListVoucher.add(new Voucher(1,1,"haha",200000,10-20-2022));
+//        itemListVoucher.add(new Voucher(1,1,"haha",200000,22-02-2022));
+
         return itemListVoucher;
     }
 

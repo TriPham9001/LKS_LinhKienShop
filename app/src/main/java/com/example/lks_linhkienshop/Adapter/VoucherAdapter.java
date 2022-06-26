@@ -33,7 +33,7 @@ public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.VoucherV
         if (voucher == null){
             return;
         }
-        holder.txtPriceVoucher.setText(voucher.getPrice());
+        holder.txtPriceVoucher.setText(String.valueOf(voucher.getDiscount()));
     }
 
     @Override

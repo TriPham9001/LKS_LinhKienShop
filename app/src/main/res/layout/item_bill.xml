@@ -107,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txtNameProdBill"
                     android:layout_marginTop="@dimen/dp_8"
-                    android:text="@string/prince"
+                    android:text="@string/price"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/sp_10" />
 

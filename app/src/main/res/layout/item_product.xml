@@ -52,22 +52,22 @@
         app:layout_constraintTop_toBottomOf="@+id/txtNameProduct" />
 
     <TextView
-        android:id="@+id/txtPrinceProduct"
+        android:id="@+id/txtDonGia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dp_5"
-        android:text="@string/prince"
+        android:text="@string/price"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/sp_14"
         app:layout_constraintStart_toEndOf="@+id/txtd"
         app:layout_constraintTop_toBottomOf="@+id/txtNameProduct" />
 
     <TextView
-        android:id="@+id/txtDescribeProduct"
+        android:id="@+id/txtMoTa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPrinceProduct"/>
+        app:layout_constraintTop_toBottomOf="@+id/txtDonGia"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -40,19 +40,21 @@ public class FavoriteFragment extends Fragment {
 
     public List<Product> initDataProduct() {
         itemListProduct = new ArrayList<>();
-        itemListProduct.add(new Product(R.drawable.cpu,"Mainboard Asus H81M-K","1,390,000","hahahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
-        itemListProduct.add(new Product(R.drawable.ic_favorite,"CPU Intel Celeron G5905","1,390,000","hahah"));
-        itemListProduct.add(new Product(R.drawable.cpu,"RAM Desktop Kingmax 4GB DDR4 Bus 2666MHz","590,000","hahah"));
-        itemListProduct.add(new Product(R.drawable.cpu,"Ổ cứng HDD 2TB Seagate SkyHawk ST2000VX008","1,440,000","hahah"));
-        itemListProduct.add(new Product(R.drawable.cpu,"Ổ cứng SSD 256GB ADATA SX6000 (ASX6000LNP-256GT-C)","1,090,000","hahah"));
-        itemListProduct.add(new Product(R.drawable.cpu,"VGA ASUS DUAL-RTX2060S-O8G-EVO-V2","liên hệ","hahah"));
-        itemListProduct.add(new Product(R.drawable.cpu,"Sound card NEWMB N-EXPS8738","liên hệ","hahah"));
-        itemListProduct.add(new Product(R.drawable.cpu,"VGA ASUS DUAL-RTX2060S-O8G-EVO-V2","370,000","hahah"));
-        itemListProduct.add(new Product(R.drawable.cpu,"Case Jetek Rhino Art - G9323","liên hệ","hahah"));
-        itemListProduct.add(new Product(R.drawable.cpu,"Nguồn Arrow 625W","440,000","hahah"));
-        itemListProduct.add(new Product(R.drawable.cpu,"DVDRW Transcend TS8XDVDS-K","750,000","hahah"));
-        itemListProduct.add(new Product(R.drawable.cpu,"Keo tản nhiệt CoolerMaster MASTERGEL REGULAR","130,000","hahah"));
+        itemListProduct.add(new Product(1,1,2,"asdad", "Mainboard Asus H81M-K", 1390000, "hahahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",true));
+        itemListProduct.add(new Product(1,1,2,"asdad","CPU Intel Celeron G5905",1390000,"hahah",false));
+        itemListProduct.add(new Product(1,1,2,"asdad","RAM Desktop Kingmax 4GB DDR4 Bus 2666MHz",524825,"hahah",true));
+        itemListProduct.add(new Product(1,1,2,"asdad","Ổ cứng HDD 2TB Seagate SkyHawk ST2000VX008",1440000,"hahah",false));
+        itemListProduct.add(new Product(1,1,2,"asdad","Ổ cứng SSD 256GB ADATA SX6000 (ASX6000LNP-256GT-C)",1090000,"hahah",false));
+        itemListProduct.add(new Product(1,1,2,"asdad","VGA ASUS DUAL-RTX2060S-O8G-EVO-V2",550000,"hahah",false));
+        itemListProduct.add(new Product(1,1,2,"asdad","Sound card NEWMB N-EXPS8738",40000,"hahah",true));
+        itemListProduct.add(new Product(1,1,2,"asdad","VGA ASUS DUAL-RTX2060S-O8G-EVO-V2",370000,"hahah",true));
+        itemListProduct.add(new Product(1,1,2,"asdad","Case Jetek Rhino Art - G9323",500000,"hahah",false));
+        itemListProduct.add(new Product(1,1,2,"asdad","Nguồn Arrow 625W",440000,"hahah",true));
+        itemListProduct.add(new Product(1,1,2,"asdad","DVDRW Transcend TS8XDVDS-K",750000,"hahah",true));
+        itemListProduct.add(new Product(1,1,2,"asdad","Keo tản nhiệt CoolerMaster MASTERGEL REGULAR",130000,"hahah",false));
 
         return itemListProduct;
     }
+
+
 }

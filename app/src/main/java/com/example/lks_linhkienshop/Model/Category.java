@@ -1,30 +1,33 @@
 package com.example.lks_linhkienshop.Model;
 
 public class Category {
-    private int image;
-    private String name;
+
+    private int id;
+    private String tenTheLoai;
 
     public Category() {
     }
 
-    public Category(int image, String name) {
-        this.image = image;
-        this.name = name;
+    public Category(int id, String tenTheLoai) {
+        this.id = id;
+        this.tenTheLoai = tenTheLoai;
     }
 
-    public int getImage() {
-        return image;
+    public int getId() {
+        return id;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTenTheLoai() {
+        return tenTheLoai;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTenTheLoai(String tenTheLoai) {
+        this.tenTheLoai = tenTheLoai;
     }
+
+
 }

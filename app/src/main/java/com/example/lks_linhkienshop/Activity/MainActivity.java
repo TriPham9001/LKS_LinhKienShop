@@ -6,12 +6,12 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.example.lks_linhkienshop.Fragment.FavoriteFragment;
 import com.example.lks_linhkienshop.Fragment.HomeFragment;
 import com.example.lks_linhkienshop.Fragment.PersonFragment;
+import com.example.lks_linhkienshop.Fragment.PersonLoginFragment;
 import com.example.lks_linhkienshop.Fragment.ShopFragment;
 import com.example.lks_linhkienshop.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         botNav = findViewById(R.id.botNavMenu);
         botNav.setOnNavigationItemSelectedListener(navListener);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fagContainer,
+                new HomeFragment()).commit();
     }
 
     public void hideBotomNav() {
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                             selFragment = new FavoriteFragment();
                             break;
                         case R.id.nav_person:
-                            selFragment = new PersonFragment();
+                            selFragment = new PersonLoginFragment();
                             break;
 
                     }

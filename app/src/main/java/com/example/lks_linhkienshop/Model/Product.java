@@ -2,50 +2,90 @@ package com.example.lks_linhkienshop.Model;
 
 public class Product {
 
-    private int image;
-    private String name;
-    private String price;
-    private String describe;
+    private int id;
+    private int idTheLoai;
+    private int idCompany;
+    private String imgUrl;
+    private String tenSanPham;
+    private Number donGia;
+    private String moTa;
+    private Boolean trangThaiSp;
 
     public Product() {
     }
 
-    public Product(int image, String name, String price, String describe) {
-        this.image = image;
-        this.name = name;
-        this.price = price;
-        this.describe = describe;
+    public Product(int id, int idTheLoai, int idCompany, String imgUrl, String tenSanPham, Number donGia, String moTa, Boolean trangThaiSp) {
+        this.id = id;
+        this.idTheLoai = idTheLoai;
+        this.idCompany = idCompany;
+        this.imgUrl = imgUrl;
+        this.tenSanPham = tenSanPham;
+        this.donGia = donGia;
+        this.moTa = moTa;
+        this.trangThaiSp = trangThaiSp;
     }
 
-    public int getImage() {
-        return image;
+    public int getId() {
+        return id;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public int getIdTheLoai() {
+        return idTheLoai;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setIdTheLoai(int idTheLoai) {
+        this.idTheLoai = idTheLoai;
     }
 
-    public String getPrice() {
-        return price;
+    public int getIdCompany() {
+        return idCompany;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setIdCompany(int idCompany) {
+        this.idCompany = idCompany;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public String getTenSanPham() {
+        return tenSanPham;
+    }
+
+    public void setTenSanPham(String tenSanPham) {
+        this.tenSanPham = tenSanPham;
+    }
+
+    public Number getDonGia() {
+        return donGia;
+    }
+
+    public void setDonGia(Number donGia) {
+        this.donGia = donGia;
+    }
+
+    public String getMoTa() {
+        return moTa;
+    }
+
+    public void setMoTa(String moTa) {
+        this.moTa = moTa;
+    }
+
+    public Boolean getTrangThaiSp() {
+        return trangThaiSp;
+    }
+
+    public void setTrangThaiSp(Boolean trangThaiSp) {
+        this.trangThaiSp = trangThaiSp;
     }
 }

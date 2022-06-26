@@ -1,15 +1,11 @@
 package com.example.lks_linhkienshop.Activity;
 
-import android.Manifest;
-import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -43,15 +39,15 @@ public class DetailActivity extends AppCompatActivity {
 
             }
         });
-        int img = getIntent().getIntExtra("img", 0);
-        String name = getIntent().getStringExtra("name");
-        String price = getIntent().getStringExtra("price");
-        String describe = getIntent().getStringExtra("describe");
+        int img = getIntent().getIntExtra("id", 0);
+        String tenSanPham = getIntent().getStringExtra("tenSanPham");
+        String donGia = getIntent().getStringExtra("donGia");
+        String moTa = getIntent().getStringExtra("moTa");
 
         imgProduct.setImageResource(img);
-        txtName.setText(name);
-        txtPrice.setText(price);
-        txtDescribe.setText(describe);
+        txtName.setText(tenSanPham);
+        txtPrice.setText(String.valueOf(donGia));
+        txtDescribe.setText(moTa);
     }
 
 
