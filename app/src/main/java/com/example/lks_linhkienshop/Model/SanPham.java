@@ -1,6 +1,6 @@
 package com.example.lks_linhkienshop.Model;
 
-public class Product {
+public class SanPham {
 
     private int id;
     private int idTheLoai;
@@ -11,10 +11,12 @@ public class Product {
     private String moTa;
     private Boolean trangThaiSp;
 
-    public Product() {
+    //FOREIGN KEY idTheLoai,idCompany
+
+    public SanPham() {
     }
 
-    public Product(int id, int idTheLoai, int idCompany, String imgUrl, String tenSanPham, Number donGia, String moTa, Boolean trangThaiSp) {
+    public SanPham(int id, int idTheLoai, int idCompany, String imgUrl, String tenSanPham, Number donGia, String moTa, Boolean trangThaiSp) {
         this.id = id;
         this.idTheLoai = idTheLoai;
         this.idCompany = idCompany;

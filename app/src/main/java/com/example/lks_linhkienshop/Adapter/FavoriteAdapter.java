@@ -10,19 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.chauthai.swipereveallayout.SwipeRevealLayout;
 import com.chauthai.swipereveallayout.ViewBinderHelper;
-import com.example.lks_linhkienshop.Model.Product;
+import com.example.lks_linhkienshop.Model.SanPham;
 import com.example.lks_linhkienshop.R;
 
 import java.util.List;
 
 public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.FavoriteViewAdapter> {
-    private List<Product> mListProduct;
+    private List<SanPham> mListSanPham;
     private ViewBinderHelper viewBinderHelper = new ViewBinderHelper();
 
-    public FavoriteAdapter(List<Product> mListProduct) {
-        this.mListProduct = mListProduct;
+    public FavoriteAdapter(List<SanPham> mListSanPham) {
+        this.mListSanPham = mListSanPham;
     }
 
     @NonNull
@@ -34,17 +33,17 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
 
     @Override
     public void onBindViewHolder(@NonNull FavoriteViewAdapter holder, int position) {
-        Product product = mListProduct.get(position);
-        if (product == null) {
+        SanPham sanPham = mListSanPham.get(position);
+        if (sanPham == null) {
             return;
         }
-        holder.txtNameFavorite.setText(product.getTenSanPham());
-        holder.txtPriceFavorite.setText((String.valueOf(product.getDonGia())));
+        holder.txtNameFavorite.setText(sanPham.getTenSanPham());
+        holder.txtPriceFavorite.setText((String.valueOf(sanPham.getDonGia())));
 
         holder.layoutDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListProduct.remove(holder.getAdapterPosition());
+                mListSanPham.remove(holder.getAdapterPosition());
                 notifyItemRemoved(holder.getAdapterPosition());
             }
         });
@@ -52,8 +51,8 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
 
     @Override
     public int getItemCount() {
-        if (mListProduct != null) {
-            return mListProduct.size();
+        if (mListSanPham != null) {
+            return mListSanPham.size();
         }
         return 0;
     }

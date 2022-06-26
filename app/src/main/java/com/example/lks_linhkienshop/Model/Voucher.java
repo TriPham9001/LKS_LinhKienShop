@@ -9,6 +9,8 @@ public class Voucher {
     private Number discount;
     private Date date;
 
+    //FOREIGN KEY idSanPham
+
     public Voucher() {
     }
 

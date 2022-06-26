@@ -12,17 +12,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chauthai.swipereveallayout.ViewBinderHelper;
-import com.example.lks_linhkienshop.Model.Product;
+import com.example.lks_linhkienshop.Model.SanPham;
 import com.example.lks_linhkienshop.R;
 
 import java.util.List;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewAdapter> {
-    private List<Product> mListProduct;
+    private List<SanPham> mListSanPham;
     private ViewBinderHelper viewBinderHelper = new ViewBinderHelper();
 
-    public ShopAdapter(List<Product> mListProduct) {
-        this.mListProduct = mListProduct;
+    public ShopAdapter(List<SanPham> mListSanPham) {
+        this.mListSanPham = mListSanPham;
     }
 
     @NonNull
@@ -34,18 +34,18 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ShopViewAdapter holder, int position) {
-        Product product = mListProduct.get(position);
-        if (product == null) {
+        SanPham sanPham = mListSanPham.get(position);
+        if (sanPham == null) {
             return;
         }
 //        holder.imgFavorite.setImageResource(product.getId());
-        holder.txtNameFavorite.setText(product.getTenSanPham());
-        holder.txtPriceFavorite.setText(String.valueOf(product.getDonGia()));
+        holder.txtNameFavorite.setText(sanPham.getTenSanPham());
+        holder.txtPriceFavorite.setText(String.valueOf(sanPham.getDonGia()));
 
         holder.layoutDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListProduct.remove(holder.getAdapterPosition());
+                mListSanPham.remove(holder.getAdapterPosition());
                 notifyItemRemoved(holder.getAdapterPosition());
             }
         });
@@ -53,8 +53,8 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewAdapte
 
     @Override
     public int getItemCount() {
-        if (mListProduct != null) {
-            return mListProduct.size();
+        if (mListSanPham != null) {
+            return mListSanPham.size();
         }
         return 0;
     }

@@ -11,16 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lks_linhkienshop.Activity.DetailActivity;
-import com.example.lks_linhkienshop.Model.Product;
+import com.example.lks_linhkienshop.Model.SanPham;
 import com.example.lks_linhkienshop.R;
 
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewAdapter> {
-    private List<Product> mListProduct;
+    private List<SanPham> mListSanPham;
 
-    public ProductAdapter(List<Product> mListProduct) {
-        this.mListProduct = mListProduct;
+    public ProductAdapter(List<SanPham> mListSanPham) {
+        this.mListSanPham = mListSanPham;
     }
 
 
@@ -33,20 +33,20 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewAdapter holder, int position) {
-        Product product = mListProduct.get(position);
-        if (product == null) {
+        SanPham sanPham = mListSanPham.get(position);
+        if (sanPham == null) {
             return;
         }
-        holder.imgProduct.setImageResource(product.getId());
-        holder.txtName.setText(product.getTenSanPham());
-        holder.txtDonGia.setText(String.valueOf(product.getDonGia()));
+        holder.imgProduct.setImageResource(sanPham.getId());
+        holder.txtName.setText(sanPham.getTenSanPham());
+        holder.txtDonGia.setText(String.valueOf(sanPham.getDonGia()));
     }
 
 
     @Override
     public int getItemCount() {
-        if (mListProduct != null) {
-            return mListProduct.size();
+        if (mListSanPham != null) {
+            return mListSanPham.size();
         }
         return 0;
     }
@@ -68,10 +68,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         public void onClick(View view) {
             int position = getAdapterPosition();
             Intent i = new Intent(view.getContext(), DetailActivity.class);
-            i.putExtra("id",mListProduct.get(position).getId());
-            i.putExtra("tenSanPham", mListProduct.get(position).getTenSanPham());
-            i.putExtra("donGia", mListProduct.get(position).getDonGia());
-            i.putExtra("moTa",mListProduct.get(position).getMoTa());
+            i.putExtra("id", mListSanPham.get(position).getId());
+            i.putExtra("tenSanPham", mListSanPham.get(position).getTenSanPham());
+            i.putExtra("donGia", mListSanPham.get(position).getDonGia());
+            i.putExtra("moTa", mListSanPham.get(position).getMoTa());
             view.getContext().startActivity(i);
 
 

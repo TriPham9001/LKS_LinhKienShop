@@ -12,11 +12,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lks_linhkienshop.Activity.MainActivity;
 import com.example.lks_linhkienshop.Adapter.CategoryAdapter;
 import com.example.lks_linhkienshop.Adapter.ProductAdapter;
 import com.example.lks_linhkienshop.Model.Category;
-import com.example.lks_linhkienshop.Model.Product;
+import com.example.lks_linhkienshop.Model.SanPham;
 import com.example.lks_linhkienshop.R;
 
 import java.util.ArrayList;
@@ -26,7 +25,7 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView rcvCatagory, rcvProduct;
     private List<Category> itemListCategory;
-    private List<Product> itemListProduct;
+    private List<SanPham> itemListSanPham;
 
     @Nullable
     @Override
@@ -79,23 +78,23 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private List<Product> initDataProduct() {
-        itemListProduct = new ArrayList<>();
-        itemListProduct.add(new Product(R.drawable.cpu,1,2,"asdad", "Mainboard Asus H81M-K", 1390000, "hahahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",true));
-        itemListProduct.add(new Product(R.drawable.cpu,1,2,"asdad","CPU Intel Celeron G5905",1390000,"hahah",false));
-        itemListProduct.add(new Product(R.drawable.cpu,1,2,"asdad","RAM Desktop Kingmax 4GB DDR4 Bus 2666MHz",524825,"hahah",true));
-        itemListProduct.add(new Product(R.drawable.cpu,1,2,"asdad","Ổ cứng HDD 2TB Seagate SkyHawk ST2000VX008",1440000,"hahah",false));
-        itemListProduct.add(new Product(R.drawable.cpu,1,2,"asdad","Ổ cứng SSD 256GB ADATA SX6000 (ASX6000LNP-256GT-C)",1090000,"hahah",false));
-        itemListProduct.add(new Product(R.drawable.cpu,1,2,"asdad","VGA ASUS DUAL-RTX2060S-O8G-EVO-V2",550000,"hahah",false));
-        itemListProduct.add(new Product(R.drawable.cpu,1,2,"asdad","Sound card NEWMB N-EXPS8738",40000,"hahah",true));
-        itemListProduct.add(new Product(R.drawable.cpu,1,2,"asdad","VGA ASUS DUAL-RTX2060S-O8G-EVO-V2",370000,"hahah",true));
-        itemListProduct.add(new Product(R.drawable.cpu,1,2,"asdad","Case Jetek Rhino Art - G9323",500000,"hahah",false));
-        itemListProduct.add(new Product(R.drawable.cpu,1,2,"asdad","Nguồn Arrow 625W",440000,"hahah",true));
-        itemListProduct.add(new Product(R.drawable.cpu,1,2,"asdad","DVDRW Transcend TS8XDVDS-K",750000,"hahah",true));
-        itemListProduct.add(new Product(R.drawable.cpu,1,2,"asdad","Keo tản nhiệt CoolerMaster MASTERGEL REGULAR",130000,"hahah",false));
+    private List<SanPham> initDataProduct() {
+        itemListSanPham = new ArrayList<>();
+        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad", "Mainboard Asus H81M-K", 1390000, "hahahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",true));
+        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","CPU Intel Celeron G5905",1390000,"hahah",false));
+        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","RAM Desktop Kingmax 4GB DDR4 Bus 2666MHz",524825,"hahah",true));
+        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Ổ cứng HDD 2TB Seagate SkyHawk ST2000VX008",1440000,"hahah",false));
+        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Ổ cứng SSD 256GB ADATA SX6000 (ASX6000LNP-256GT-C)",1090000,"hahah",false));
+        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","VGA ASUS DUAL-RTX2060S-O8G-EVO-V2",550000,"hahah",false));
+        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Sound card NEWMB N-EXPS8738",40000,"hahah",true));
+        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","VGA ASUS DUAL-RTX2060S-O8G-EVO-V2",370000,"hahah",true));
+        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Case Jetek Rhino Art - G9323",500000,"hahah",false));
+        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Nguồn Arrow 625W",440000,"hahah",true));
+        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","DVDRW Transcend TS8XDVDS-K",750000,"hahah",true));
+        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Keo tản nhiệt CoolerMaster MASTERGEL REGULAR",130000,"hahah",false));
 
 
-        return itemListProduct;
+        return itemListSanPham;
     }
 
 
