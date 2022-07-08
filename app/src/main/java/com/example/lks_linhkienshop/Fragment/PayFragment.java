@@ -68,7 +68,6 @@ public class PayFragment extends Fragment {
                 fm.replace(R.id.fagPay, f).commit();
             }
         });
-        Log.d( "TAGz","IMGBack; " +imgBack);
 
         btnVoucher.setOnClickListener(new View.OnClickListener() {
             @Override

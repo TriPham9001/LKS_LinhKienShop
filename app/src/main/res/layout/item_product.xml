@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/txtNameProduct"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/dp_154"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_10"
         android:padding="@dimen/dp_5"

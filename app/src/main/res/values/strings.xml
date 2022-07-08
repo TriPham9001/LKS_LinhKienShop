@@ -63,6 +63,7 @@
     <string name="txt_total_bill">Tổng cộng</string>
     <string name="x">x</string>
     <string name="no_account">Bạn Chưa Có Tài Khoản</string>
+    <string name="txt_search">Search...</string>
 
 
 </resources>

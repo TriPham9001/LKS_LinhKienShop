@@ -1,19 +1,24 @@
 package com.example.lks_linhkienshop.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lks_linhkienshop.Activity.SearchActivity;
 import com.example.lks_linhkienshop.Adapter.CategoryAdapter;
 import com.example.lks_linhkienshop.Adapter.ProductAdapter;
+import com.example.lks_linhkienshop.Adapter.SearchAdapter;
 import com.example.lks_linhkienshop.Model.Category;
 import com.example.lks_linhkienshop.Model.SanPham;
 import com.example.lks_linhkienshop.R;
@@ -22,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-
+    private TextView txtSearch;
     private RecyclerView rcvCatagory, rcvProduct;
     private List<Category> itemListCategory;
     private List<SanPham> itemListSanPham;
@@ -31,15 +36,26 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-
         rcv(view);
-
+        txtSearch = view.findViewById(R.id.txtSearch);
+        mIntent(view);
         return view;
 
 
     }
 
+    public void mIntent(View view) {
+        txtSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Fragment f = new SearchFragment();
+//                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+//                fm.replace(R.id.fagContainer, f).commit();
+                Intent i =new Intent(getActivity().getApplication(), SearchActivity.class);
+                startActivity(i);
+            }
+        });
+    }
 
     private void rcv(View view) {
         rcvCatagory = view.findViewById(R.id.rcvCategory);
@@ -92,7 +108,6 @@ public class HomeFragment extends Fragment {
         itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Nguồn Arrow 625W",440000,"hahah",true));
         itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","DVDRW Transcend TS8XDVDS-K",750000,"hahah",true));
         itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Keo tản nhiệt CoolerMaster MASTERGEL REGULAR",130000,"hahah",false));
-
 
         return itemListSanPham;
     }
