@@ -49,7 +49,7 @@ public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.VoucherV
         public VoucherViewAdapter(@NonNull View itemView) {
             super(itemView);
 
-            txtPriceVoucher = itemView.findViewById(R.id.txtPriceListVoucher);
+            txtPriceVoucher = itemView.findViewById(R.id.txtDiscount);
 
 
 

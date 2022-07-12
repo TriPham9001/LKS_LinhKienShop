@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
         botNav.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fagContainer,
                 new HomeFragment()).commit();
-
-
     }
 
     public void hideBotomNav() {
@@ -60,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_person:
                             selFragment = new PersonLoginFragment();
                             break;
-
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fagContainer, selFragment).commit();
                     return true;

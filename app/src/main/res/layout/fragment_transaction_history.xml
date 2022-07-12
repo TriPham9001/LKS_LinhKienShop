@@ -54,7 +54,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_10"/>
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -84,8 +87,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView9"
+            android:layout_alignStart="@+id/textView9"
+            android:layout_alignEnd="@+id/textView9"
+            android:layout_centerHorizontal="true"
             android:text="@string/price"
             android:textAllCaps="true"
+            android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/sp_30"
             android:textStyle="bold" />
