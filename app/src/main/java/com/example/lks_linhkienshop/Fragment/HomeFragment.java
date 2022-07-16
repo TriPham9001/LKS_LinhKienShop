@@ -2,10 +2,12 @@ package com.example.lks_linhkienshop.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,16 +17,24 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lks_linhkienshop.Activity.LoginActivity;
+import com.example.lks_linhkienshop.Activity.MainActivity;
 import com.example.lks_linhkienshop.Activity.SearchActivity;
 import com.example.lks_linhkienshop.Adapter.CategoryAdapter;
 import com.example.lks_linhkienshop.Adapter.ProductAdapter;
 import com.example.lks_linhkienshop.Adapter.SearchAdapter;
 import com.example.lks_linhkienshop.Model.Category;
+import com.example.lks_linhkienshop.Model.KhachHang;
 import com.example.lks_linhkienshop.Model.SanPham;
 import com.example.lks_linhkienshop.R;
+import com.example.lks_linhkienshop.retrofit.IRetrofitService;
+import com.example.lks_linhkienshop.retrofit.RetrofitBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class HomeFragment extends Fragment {
     private TextView txtSearch;
@@ -65,14 +75,40 @@ public class HomeFragment extends Fragment {
 
         rcvProduct = view.findViewById(R.id.rcvProduct);
         rcvProduct.setHasFixedSize(true);
-        rcvProduct.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        rcvProduct.setAdapter(new ProductAdapter(initDataProduct()));
+        getSPHotU();
+        //rcvProduct.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        //rcvProduct.setAdapter(new ProductAdapter(initDataProduct()));
 
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
-        rcvProduct.setLayoutManager(gridLayoutManager);
-        rcvProduct.setAdapter(new ProductAdapter(initDataProduct()));
+        //GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
+        //rcvProduct.setLayoutManager(gridLayoutManager);
+        //rcvProduct.setAdapter(new ProductAdapter(initDataProduct()));
 
+    }
+
+    private void getSPHotU() {
+
+        IRetrofitService iRetrofitService = RetrofitBuilder.getClinet().create(IRetrofitService.class);
+        Call<List<SanPham>> call = iRetrofitService.sanphamhot();
+        call.enqueue(new Callback<List<SanPham>>() {
+            @Override
+            public void onResponse(Call<List<SanPham>> call, retrofit2.Response<List<SanPham>> response) {
+                if (response.isSuccessful()){
+                    itemListSanPham=response.body();
+                    GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
+                    rcvProduct.setLayoutManager(gridLayoutManager);
+                    rcvProduct.setAdapter(new ProductAdapter(itemListSanPham));
+                } else {
+                    Toast.makeText(getContext(), "Sai TK or MK", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<SanPham>> call, Throwable t) {
+                Toast.makeText(getContext(), "Sai TK or MK", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private List<Category> initDataCategory() {
@@ -93,7 +129,7 @@ public class HomeFragment extends Fragment {
         return itemListCategory;
     }
 
-
+/*
     private List<SanPham> initDataProduct() {
         itemListSanPham = new ArrayList<>();
         itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad", "Mainboard Asus H81M-K", 1390000, "hahahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",true));
@@ -111,6 +147,8 @@ public class HomeFragment extends Fragment {
 
         return itemListSanPham;
     }
+*/
+
 
 
 

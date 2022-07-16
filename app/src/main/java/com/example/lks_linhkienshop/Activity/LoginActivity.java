@@ -20,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.lks_linhkienshop.Fragment.PersonFragment;
 import com.example.lks_linhkienshop.Model.KhachHang;
 import com.example.lks_linhkienshop.R;
 import com.example.lks_linhkienshop.retrofit.IRetrofitService;
@@ -43,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        MainActivity.loginstatus=0;
         soDT = password = matKhau = "";
         edSoDt = findViewById(R.id.edEmail);
         edPasswprd = findViewById(R.id.edPassword);
@@ -128,27 +129,29 @@ public class LoginActivity extends AppCompatActivity {
         call.enqueue(new Callback<KhachHang>() {
             @Override
             public void onResponse(Call<KhachHang> call, retrofit2.Response<KhachHang> response) {
-                if (response.body().getMatKhau().equals(matKhau)){
-
+                if (response.isSuccessful()){
+                    Log.d("TAG", "onResponse: "+response.body());
+                    Log.d("TAG2", "onResponse: "+response.body().getId());
+                    MainActivity.loginstatus = 1;
+                    Log.d("TAG3", "onResponse: "+MainActivity.loginstatus);
+                    PersonFragment.khachHanginfo =new KhachHang();
+                    PersonFragment.khachHanginfo.setId(response.body().getId());
+                    PersonFragment.khachHanginfo.setTenKH(response.body().getTenKH());
+                    PersonFragment.khachHanginfo.setDiaChi(response.body().getDiaChi());
+                    PersonFragment.khachHanginfo.setMatKhau(response.body().getMatKhau());
                     Intent i = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(i);
-
-
-
                     Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(LoginActivity.this, "Sai TK or MK", Toast.LENGTH_SHORT).show();
 
 
                 }
-                Log.d("TAG", "onResponse: "+response.body().getMatKhau());
             }
 
             @Override
             public void onFailure(Call<KhachHang> call, Throwable t) {
-                Log.d("TAGE", "onFailure: "+t.toString());
-                Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(LoginActivity.this, "Sai TK or MK", Toast.LENGTH_SHORT).show();
             }
         });
     }

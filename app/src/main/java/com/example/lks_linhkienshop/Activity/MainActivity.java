@@ -20,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView botNav;
+    public static int loginstatus =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +57,16 @@ public class MainActivity extends AppCompatActivity {
                             selFragment = new FavoriteFragment();
                             break;
                         case R.id.nav_person:
-                            selFragment = new PersonLoginFragment();
-                            break;
+                            if (loginstatus==0)
+                            {
+                                selFragment = new PersonLoginFragment();
+                                break;
+                            }else
+                            {
+                                selFragment = new PersonFragment();
+                                break;
+                            }
+
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fagContainer, selFragment).commit();
                     return true;

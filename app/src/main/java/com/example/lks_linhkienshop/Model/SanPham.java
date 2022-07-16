@@ -6,25 +6,38 @@ public class SanPham {
     private int idTheLoai;
     private int idCompany;
     private String imgUrl;
-    private String tenSanPham;
-    private Number donGia;
+    private String tenSP;
+    private Float donGia;
     private String moTa;
     private Boolean trangThaiSp;
+    private Float discount;
 
     //FOREIGN KEY idTheLoai,idCompany
 
     public SanPham() {
     }
 
-    public SanPham(int id, int idTheLoai, int idCompany, String imgUrl, String tenSanPham, Number donGia, String moTa, Boolean trangThaiSp) {
+    public SanPham(int id, String tenSP, Float donGia, Float discount) {
+        this.id = id;
+        this.tenSP = tenSP;
+        this.donGia = donGia;
+        this.discount = donGia- discount;
+    }
+
+    public SanPham(int id) {
+        this.id = id;
+    }
+
+    public SanPham(int id, int idTheLoai, int idCompany, String imgUrl, String tenSP, Float donGia, String moTa, Boolean trangThaiSp, Float discount) {
         this.id = id;
         this.idTheLoai = idTheLoai;
         this.idCompany = idCompany;
         this.imgUrl = imgUrl;
-        this.tenSanPham = tenSanPham;
+        this.tenSP = tenSP;
         this.donGia = donGia;
         this.moTa = moTa;
         this.trangThaiSp = trangThaiSp;
+        this.discount = discount;
     }
 
     public int getId() {
@@ -59,19 +72,19 @@ public class SanPham {
         this.imgUrl = imgUrl;
     }
 
-    public String getTenSanPham() {
-        return tenSanPham;
+    public String getTenSP() {
+        return tenSP;
     }
 
-    public void setTenSanPham(String tenSanPham) {
-        this.tenSanPham = tenSanPham;
+    public void setTenSP(String tenSP) {
+        this.tenSP = tenSP;
     }
 
-    public Number getDonGia() {
+    public Float getDonGia() {
         return donGia;
     }
 
-    public void setDonGia(Number donGia) {
+    public void setDonGia(Float donGia) {
         this.donGia = donGia;
     }
 
@@ -89,5 +102,13 @@ public class SanPham {
 
     public void setTrangThaiSp(Boolean trangThaiSp) {
         this.trangThaiSp = trangThaiSp;
+    }
+
+    public Float getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Float discount) {
+        this.discount = discount;
     }
 }

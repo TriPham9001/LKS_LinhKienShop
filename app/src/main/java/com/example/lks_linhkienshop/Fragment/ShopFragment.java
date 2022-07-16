@@ -49,14 +49,14 @@ public class ShopFragment extends Fragment {
         rcvBill = view.findViewById(R.id.rcvBill);
         rcvBill.setHasFixedSize(true);
         rcvBill.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        rcvBill.setAdapter(new ShopAdapter(initDataProduct()));
+        //rcvBill.setAdapter(new ShopAdapter(initDataProduct()));
 
 
         return view;
     }
 
 
-
+/*
     public List<SanPham> initDataProduct() {
         itemListSanPham = new ArrayList<>();
         itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad", "Mainboard Asus H81M-K", 1390000, "hahahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",true));
@@ -74,5 +74,5 @@ public class ShopFragment extends Fragment {
 
 
         return itemListSanPham;
-    }
+    }*/
 }

@@ -39,7 +39,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewAdapte
             return;
         }
 //        holder.imgFavorite.setImageResource(product.getId());
-        holder.txtNameFavorite.setText(sanPham.getTenSanPham());
+        holder.txtNameFavorite.setText(sanPham.getTenSP());
         holder.txtPriceFavorite.setText(String.valueOf(sanPham.getDonGia()));
 
         holder.layoutDelete.setOnClickListener(new View.OnClickListener() {

@@ -37,7 +37,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
         if (sanPham == null) {
             return;
         }
-        holder.txtNameFavorite.setText(sanPham.getTenSanPham());
+        holder.txtNameFavorite.setText(sanPham.getTenSP());
         holder.txtPriceFavorite.setText((String.valueOf(sanPham.getDonGia())));
 
         holder.layoutDelete.setOnClickListener(new View.OnClickListener() {

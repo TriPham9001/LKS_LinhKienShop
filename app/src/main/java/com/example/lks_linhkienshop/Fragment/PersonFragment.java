@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,11 +15,14 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.lks_linhkienshop.Activity.LoginActivity;
 import com.example.lks_linhkienshop.Activity.MainActivity;
+import com.example.lks_linhkienshop.Model.KhachHang;
 import com.example.lks_linhkienshop.R;
 
 public class PersonFragment extends Fragment {
     private ConstraintLayout clShop, clPay, clOder, clHistory, clResertPass, clAccountSett;
     private View btnLogOut;
+    private TextView name, diaChi;
+    public static KhachHang khachHanginfo;
 
 
     @Nullable
@@ -32,6 +36,10 @@ public class PersonFragment extends Fragment {
         clResertPass = view.findViewById(R.id.layoutResetPassword);
         clAccountSett = view.findViewById(R.id.layoutAccountSettings);
         btnLogOut = view.findViewById(R.id.btnLogOut);
+        name = view.findViewById(R.id.txtNamePerson);
+        diaChi =view.findViewById(R.id.txtIdEmailPerson);
+        name.setText(String.valueOf(khachHanginfo.getTenKH()));
+        diaChi.setText(String.valueOf(khachHanginfo.getDiaChi()));
 
         onClickCl(view);
 
@@ -118,7 +126,8 @@ public class PersonFragment extends Fragment {
         fm.replace(R.id.fagContainer, f).commit();
     }
     public void goToLogin(View view) {
-        Intent i = new Intent(getActivity().getApplication(),LoginActivity.class);
+        MainActivity.loginstatus = 0;
+        Intent i = new Intent(getActivity().getApplication(),MainActivity.class);
         startActivity(i);
     }
 

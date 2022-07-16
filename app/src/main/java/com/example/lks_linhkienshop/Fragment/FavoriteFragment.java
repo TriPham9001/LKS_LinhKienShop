@@ -31,12 +31,12 @@ public class FavoriteFragment extends Fragment {
         rcvFavoryte = view.findViewById(R.id.rcvFavorite);
         rcvFavoryte.setHasFixedSize(true);
         rcvFavoryte.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        rcvFavoryte.setAdapter(new FavoriteAdapter(initDataProduct()));
+       // rcvFavoryte.setAdapter(new FavoriteAdapter(initDataProduct()));
 
         return view;
 
     }
-
+/*
     public List<SanPham> initDataProduct() {
         itemListSanPham = new ArrayList<>();
         itemListSanPham.add(new SanPham(1,1,2,"asdad", "Mainboard Asus H81M-K", 1390000, "hahahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",true));
@@ -53,7 +53,7 @@ public class FavoriteFragment extends Fragment {
         itemListSanPham.add(new SanPham(1,1,2,"asdad","Keo tản nhiệt CoolerMaster MASTERGEL REGULAR",130000,"hahah",false));
 
         return itemListSanPham;
-    }
+    }*/
 
 
 }
