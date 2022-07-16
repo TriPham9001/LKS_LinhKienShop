@@ -121,14 +121,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     public class ProductViewAdapter extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView imgProduct;
-        private TextView txtName, txtDonGia, txtMoTa;
+        private TextView txtName, txtDonGia;
 
         public ProductViewAdapter(@NonNull View iv) {
             super(iv);
             imgProduct = iv.findViewById(R.id.imgProduct);
             txtName = iv.findViewById(R.id.txtNameProduct);
             txtDonGia = iv.findViewById(R.id.txtDonGia);
-            txtMoTa = iv.findViewById(R.id.txtMoTa);
             iv.setOnClickListener(this);
         }
 

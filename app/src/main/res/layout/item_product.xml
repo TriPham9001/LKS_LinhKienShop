@@ -37,6 +37,7 @@
         android:text="@string/name_product"
         android:textColor="@color/black"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clImg" />
 
@@ -44,30 +45,50 @@
         android:id="@+id/txtd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/dp_6"
+        android:text="@string/d"
+        android:textColor="@color/colorBlack40"
+        android:textSize="@dimen/sp_10"
+        android:layout_margin="@dimen/dp_5"
+        app:layout_constraintEnd_toStartOf="@+id/txtDonGiaChuaGiam"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameProduct" />
+
+
+    <TextView
+        android:id="@+id/txtDonGiaChuaGiam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price_underline"
+        android:textColor="@color/colorBlack40"
+        android:textSize="@dimen/sp_12"
+        android:layout_margin="@dimen/dp_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameProduct" />
+
+    <TextView
+        android:id="@+id/txtd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/d"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/sp_12"
-        app:layout_constraintStart_toStartOf="@+id/txtNameProduct"
-        app:layout_constraintTop_toBottomOf="@+id/txtNameProduct" />
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtDonGia"
+        app:layout_constraintTop_toBottomOf="@+id/txtd" />
 
     <TextView
         android:id="@+id/txtDonGia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/dp_5"
         android:text="@string/price"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/sp_14"
-        app:layout_constraintStart_toEndOf="@+id/txtd"
-        app:layout_constraintTop_toBottomOf="@+id/txtNameProduct" />
-
-    <TextView
-        android:id="@+id/txtMoTa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDonGia"/>
+        app:layout_constraintTop_toBottomOf="@+id/txtDonGiaChuaGiam" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

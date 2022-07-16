@@ -13,6 +13,8 @@
     <!--  Product  -->
     <string name="name_product">Phụ kiện máy tính</string>
     <string name="price">20000</string>
+    <string name="price_underline"><strike>20000</strike></string>
+
     <string name="sold">Đã bán: </string>
     <string name="number">15</string>
     <string name="d">₫</string>
