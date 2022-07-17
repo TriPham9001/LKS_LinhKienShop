@@ -14,13 +14,13 @@ import retrofit2.http.POST;
 public interface IRetrofitService {
 
 
-    @POST("LKS_PHP/views/khach_hang_login.php")
+    @POST("views/khach_hang_login.php")
     Call<KhachHang> login(@Body KhachHang kh);
 
-    @POST("LKS_PHP/views/san_pham_get_voucher.php")
+    @POST("views/san_pham_get_voucher.php")
     Call<List<SanPham>> sanphamhot();
 
-    @POST("LKS_PHP/views/san_pham_get_images.php")
+    @POST("views/san_pham_get_images.php")
     Call<List<Image>> getimges(@Body SanPham sp);
 
 }

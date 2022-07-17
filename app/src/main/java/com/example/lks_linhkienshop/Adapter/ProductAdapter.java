@@ -54,13 +54,15 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @Override
     public void onBindViewHolder(@NonNull ProductViewAdapter holder, int position) {
         SanPham sanPham = mListSanPham.get(position);
+        Float price= sanPham.getDonGia() - sanPham.getDiscount();
         if (sanPham == null) {
             return;
         }
         getImgs(holder, position, sanPham.getId());
         //holder.imgProduct.setImageResource(R.drawable.cpu);
         holder.txtName.setText(sanPham.getTenSP());
-        holder.txtDonGia.setText(String.valueOf(sanPham.getDonGia()));
+        holder.txtDonGia.setText(String.valueOf(price));
+        holder.txtDonGiaChuaGiam.setText(String.valueOf(sanPham.getDonGia()));
     }
 
 
@@ -121,13 +123,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     public class ProductViewAdapter extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView imgProduct;
-        private TextView txtName, txtDonGia;
+        private TextView txtName, txtDonGia, txtDonGiaChuaGiam;
 
         public ProductViewAdapter(@NonNull View iv) {
             super(iv);
             imgProduct = iv.findViewById(R.id.imgProduct);
             txtName = iv.findViewById(R.id.txtNameProduct);
             txtDonGia = iv.findViewById(R.id.txtDonGia);
+            txtDonGiaChuaGiam =iv.findViewById(R.id.txtDonGiaChuaGiam);
             iv.setOnClickListener(this);
         }
 
@@ -138,6 +141,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             i.putExtra("id", mListSanPham.get(position).getId());
             i.putExtra("tenSanPham", mListSanPham.get(position).getTenSP());
             i.putExtra("donGia", mListSanPham.get(position).getDonGia());
+            Log.d("1134", "onClick: "+mListSanPham.get(position).getDonGia());
             i.putExtra("moTa", mListSanPham.get(position).getMoTa());
             view.getContext().startActivity(i);
 
