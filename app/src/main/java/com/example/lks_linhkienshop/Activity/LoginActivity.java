@@ -26,8 +26,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 
 public class LoginActivity extends AppCompatActivity {
-    private EditText edSoDt, edPasswprd;
-    private String soDT, password, matKhau;
+    private EditText edSoDt, edPassword;
+    private String soDT, matKhau;
     private Button btnSignIn;
     private TextView txtForgetPassword, txtSignUp;
 
@@ -36,9 +36,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         MainActivity.loginstatus=0;
-        soDT = password = matKhau = "";
+        soDT  = matKhau = "";
         edSoDt = findViewById(R.id.edPhone);
-        edPasswprd = findViewById(R.id.edPassword);
+        edPassword = findViewById(R.id.edPassword);
         btnSignIn = findViewById(R.id.btnSignIn);
         txtSignUp = findViewById(R.id.txtSignUp);
 
@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String username = edSoDt.getText().toString().trim();
-                String password = edPasswprd.getText().toString().trim();
+                String password = edPassword.getText().toString().trim();
 
                 if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)){
                     loginU();
@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginU() {
         soDT = edSoDt.getText().toString().trim();
-        matKhau = edPasswprd.getText().toString().trim();
+        matKhau = edPassword.getText().toString().trim();
         KhachHang kh=new KhachHang(soDT,matKhau);
         IRetrofitService iRetrofitService = RetrofitBuilder.getClinet().create(IRetrofitService.class);
         Call<KhachHang> call = iRetrofitService.login(kh);

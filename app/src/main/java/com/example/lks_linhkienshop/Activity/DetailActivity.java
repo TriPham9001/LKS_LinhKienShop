@@ -10,13 +10,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.lks_linhkienshop.Adapter.ProductAdapter;
 import com.example.lks_linhkienshop.Fragment.ShopFragment;
 import com.example.lks_linhkienshop.Model.Image;
 import com.example.lks_linhkienshop.Model.SanPham;
@@ -32,7 +31,8 @@ import retrofit2.Callback;
 
 
 public class DetailActivity extends AppCompatActivity {
-    private TextView txtName, txtPrice, txtDescribe;
+    private ConstraintLayout clBeforeImg, clNextImg;
+    private TextView txtName, txtPrice, txtDescribe,txtImgPresent,txtImgTotal;
     private ImageView imgProduct;
     private Button btnAddToCard;
     private List<Image> imgs;
@@ -42,10 +42,14 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         txtName = findViewById(R.id.txtDetailName);
-        imgProduct = findViewById(R.id.imgDetail);
         txtPrice = findViewById(R.id.txtDetailPrice);
         txtDescribe = findViewById(R.id.txtDescribeDetail);
+        txtImgPresent = findViewById(R.id.txtImgPresent);//vị trí ảnh hiện tại đang ở
+        txtImgTotal = findViewById(R.id.txtImgTotal);//Tổng số ảnh
+        imgProduct = findViewById(R.id.imgDetail);
         btnAddToCard = findViewById(R.id.btnAddToCard);
+        clBeforeImg = findViewById(R.id.clBeforeImg);//quay lại ảnh
+        clNextImg = findViewById(R.id.clNextImg);//qua ảnh mới
 
         btnAddToCard.setOnClickListener(new View.OnClickListener() {
             @Override

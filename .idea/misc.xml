@@ -7,6 +7,7 @@
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/btn_background.xml" value="0.2078125" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/btn_person.xml" value="0.2078125" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/dashed_line.xml" value="0.1953125" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/heder.xml" value="0.34371807967313583" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/ic_baseline_favorite.xml" value="0.20364583333333333" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/ic_baseline_history.xml" value="0.20364583333333333" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/ic_chat.xml" value="0.20364583333333333" />
@@ -14,7 +15,11 @@
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/ic_forward.xml" value="0.20364583333333333" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/ic_home.xml" value="0.20364583333333333" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/ic_key.xml" value="0.20364583333333333" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.34371807967313583" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/ic_outline_assignment_turned.xml" value="0.20364583333333333" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/ic_outline_money.xml" value="0.34371807967313583" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/ic_person.xml" value="0.34371807967313583" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/ic_shop.xml" value="0.34371807967313583" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/line.xml" value="0.1953125" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/line_bottom.xml" value="0.1953125" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable-v24/line_top.xml" value="0.1953125" />
@@ -34,50 +39,54 @@
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_checkbox.xml" value="0.1953125" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_create.xml" value="0.20364583333333333" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_delete.xml" value="0.1953125" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_dot_click.xml" value="0.19583333333333333" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_dot_default.xml" value="0.19583333333333333" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_flash.xml" value="0.20364583333333333" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_launcher_background.xml" value="0.20364583333333333" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_mail.xml" value="0.34371807967313583" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_outline_account.xml" value="0.34371807967313583" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_outline_home.xml" value="0.20364583333333333" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_outline_person.xml" value="0.20364583333333333" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_phone.xml" value="0.20364583333333333" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_place.xml" value="0.20364583333333333" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_remove.xml" value="0.34371807967313583" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/ic_search.xml" value="0.34371807967313583" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/item_categoty_bg.xml" value="0.19583333333333333" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/item_img_product.xml" value="0.34371807967313583" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/drawable/item_product_bg.xml" value="0.34371807967313583" />
-        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_detail.xml" value="0.1703125" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_detail.xml" value="1.25" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_dialog_voucher.xml" value="0.33" />
-        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_login.xml" value="0.175" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_order.xml" value="0.1703125" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_pay.xml" value="0.1703125" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_search.xml" value="0.3104166666666667" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_set_account.xml" value="0.1875" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_set_password.xml" value="0.25" />
-        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_sign_up.xml" value="0.1703125" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/activity_splash_screen.xml" value="0.3237997957099081" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_change_password.xml" value="0.3302083333333333" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_favorite.xml" value="0.1703125" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_home.xml" value="0.3237997957099081" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_image_product.xml" value="0.30439223697650664" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_order.xml" value="0.3302083333333333" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_pay.xml" value="0.33" />
-        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_person.xml" value="0.3302083333333333" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_person.xml" value="0.16126042632066728" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_person_login.xml" value="0.3237997957099081" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_set_account.xml" value="0.5" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_shop.xml" value="0.22" />
-        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_transaction_history.xml" value="0.175" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/fragment_transaction_history.xml" value="0.25" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/item_bill.xml" value="0.33" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/item_category.xml" value="0.67" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/item_imgage.xml" value="0.1" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/item_product.xml" value="0.67" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/item_product_favorite.xml" value="0.25" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/item_product_favorite_1.xml" value="0.175" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/item_search.xml" value="0.3237997957099081" />
+        <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/item_transaction_history.xml" value="0.3237997957099081" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/layout/item_voucher.xml" value="0.5" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/menu/bottom_nav_detail.xml" value="0.175" />
         <entry key="..\:/HocTap/LKS_LinhKienShop/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3237997957099081" />
-        <entry key="..\:/program/LKS_LinhKienShop/app/src/main/res/layout/activity_detail.xml" value="0.38697916666666665" />
-        <entry key="..\:/program/LKS_LinhKienShop/app/src/main/res/layout/activity_dialog_voucher.xml" value="0.30434782608695654" />
-        <entry key="..\:/program/LKS_LinhKienShop/app/src/main/res/layout/activity_login.xml" value="0.38697916666666665" />
-        <entry key="..\:/program/LKS_LinhKienShop/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
-        <entry key="..\:/program/LKS_LinhKienShop/app/src/main/res/layout/activity_search.xml" value="0.38697916666666665" />
-        <entry key="..\:/program/LKS_LinhKienShop/app/src/main/res/layout/activity_sign_up.xml" value="0.38697916666666665" />
-        <entry key="..\:/program/LKS_LinhKienShop/app/src/main/res/layout/activity_splash_screen.xml" value="0.38697916666666665" />
-        <entry key="..\:/program/LKS_LinhKienShop/app/src/main/res/layout/fragment_change_password.xml" value="0.38697916666666665" />
-        <entry key="..\:/program/LKS_LinhKienShop/app/src/main/res/layout/fragment_person.xml" value="0.18819655521783182" />
-        <entry key="..\:/program/LKS_LinhKienShop/app/src/main/res/layout/fragment_person_login.xml" value="0.18206521739130435" />
-        <entry key="..\:/program/LKS_LinhKienShop/app/src/main/res/layout/fragment_set_account.xml" value="0.18206521739130435" />
-        <entry key="..\:/program/LKS_LinhKienShop/app/src/main/res/layout/item_product.xml" value="0.18819655521783182" />
       </map>
     </option>
   </component>
