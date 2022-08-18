@@ -77,12 +77,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<KhachHang> call, retrofit2.Response<KhachHang> response) {
                 if (response.isSuccessful()){
-                    Log.d("TAG", "onResponse: "+response.body());
-                    Log.d("TAG2", "onResponse: "+response.body().getId());
+
                     MainActivity.loginstatus = 1;
-                    Log.d("TAG3", "onResponse: "+MainActivity.loginstatus);
+
                     PersonFragment.khachHanginfo =new KhachHang();
+                    PersonFragment.khachHanginfo.setIdKhachHang(String.valueOf(response.body().getId()));
                     PersonFragment.khachHanginfo.setId(response.body().getId());
+                    Log.d("TAG", "onResponse: "+PersonFragment.khachHanginfo.getIdKhachHang());
                     PersonFragment.khachHanginfo.setTenKH(response.body().getTenKH());
                     PersonFragment.khachHanginfo.setDiaChi(response.body().getDiaChi());
                     PersonFragment.khachHanginfo.setMatKhau(response.body().getMatKhau());

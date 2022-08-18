@@ -8,15 +8,23 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lks_linhkienshop.Adapter.ProductAdapter;
 import com.example.lks_linhkienshop.Adapter.SearchAdapter;
+import com.example.lks_linhkienshop.Model.SanPham;
 import com.example.lks_linhkienshop.Model.Search;
 import com.example.lks_linhkienshop.R;
+import com.example.lks_linhkienshop.retrofit.IRetrofitService;
+import com.example.lks_linhkienshop.retrofit.RetrofitBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class SearchActivity extends AppCompatActivity {
     private View imgBack;
@@ -36,8 +44,9 @@ public class SearchActivity extends AppCompatActivity {
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i =new Intent(SearchActivity.this, MainActivity.class);
-                startActivity(i);
+                SearchActivity.this.finish();
+                //Intent i =new Intent(SearchActivity.this, MainActivity.class);
+                //startActivity(i);
 //                MainActivity a=new MainActivity();
 //                a.hideBotomNav();
             }
@@ -45,42 +54,51 @@ public class SearchActivity extends AppCompatActivity {
         rcvSearch = findViewById(R.id.rcvSearch);
         rcvSearch.setHasFixedSize(true);
         rcvSearch.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        rcvSearch.setAdapter(new SearchAdapter(initDataSearch()));
+
 
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                searchAdapter.getFilter().filter(query);
+                //searchAdapter.getFilter().filter(query);
+                search(query);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                filterList(newText);
+                //filterList(newText);
+
+                search(newText);
                 return (true);
             }
         });
 
 
     }
-    private List<Search> initDataSearch() {
-        itemListSearch = new ArrayList<>();
-        itemListSearch.add(new Search(R.drawable.cpu, "Mainboard", "205050"));
-        itemListSearch.add(new Search(R.drawable.cpu, "CPU", "205050"));
-        itemListSearch.add(new Search(R.drawable.cpu, "Ram", "205050"));
-        itemListSearch.add(new Search(R.drawable.cpu, "Ổ cứng HDD", "205050"));
-        itemListSearch.add(new Search(R.drawable.cpu, "Ổ cứng SSD", "205050"));
-        itemListSearch.add(new Search(R.drawable.cpu, "VGA Card", "205050"));
-        itemListSearch.add(new Search(R.drawable.cpu, "Sound Card", "205050"));
-        itemListSearch.add(new Search(R.drawable.cpu, "Case", "205050"));
-        itemListSearch.add(new Search(R.drawable.cpu, "Power", "205050"));
-        itemListSearch.add(new Search(R.drawable.cpu, "Fan CPU", "205050"));
-        itemListSearch.add(new Search(R.drawable.cpu, "DVD", "205050"));
-        itemListSearch.add(new Search(R.drawable.cpu, "Keo tán nhiệt", "205050"));
+    private void search(String query) {
+        IRetrofitService iRetrofitService = RetrofitBuilder.getClinet().create(IRetrofitService.class);
+        Search txtSearch=new Search(query);
+        Call<List<Search>> call = iRetrofitService.search(txtSearch);
+        call.enqueue(new Callback<List<Search>>() {
+            @Override
+            public void onResponse(Call<List<Search>> call, retrofit2.Response<List<Search>> response) {
+                if (response.isSuccessful()){
 
-        return itemListSearch;
+                    rcvSearch.setAdapter(new SearchAdapter(response.body()));
+                } else {
+                    //do nothing
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Search>> call, Throwable t) {
+                //do nothing
+            }
+        });
     }
+
 
     private void filterList(String text) {
         List<Search> filteredList = new ArrayList<>();

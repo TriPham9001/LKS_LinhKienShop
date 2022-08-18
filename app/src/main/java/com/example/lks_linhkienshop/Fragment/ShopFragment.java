@@ -1,11 +1,14 @@
 package com.example.lks_linhkienshop.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,16 +17,27 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lks_linhkienshop.Activity.LoginActivity;
+import com.example.lks_linhkienshop.Activity.MainActivity;
 import com.example.lks_linhkienshop.Adapter.ShopAdapter;
+import com.example.lks_linhkienshop.Model.CTHD;
+import com.example.lks_linhkienshop.Model.HoaDon;
+import com.example.lks_linhkienshop.Model.KhachHang;
 import com.example.lks_linhkienshop.Model.SanPham;
 import com.example.lks_linhkienshop.R;
+import com.example.lks_linhkienshop.retrofit.IRetrofitService;
+import com.example.lks_linhkienshop.retrofit.RetrofitBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+
 public class ShopFragment extends Fragment {
     private TextView txtPriceSubtotal,txtPriceTotalBill;
     private Button btnPay;
+    public static List<CTHD> gioHang = new ArrayList<>();
 
 
     private RecyclerView rcvBill;
@@ -41,18 +55,52 @@ public class ShopFragment extends Fragment {
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment f = new PayFragment();
-                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
-                fm.replace(R.id.fragmentShop, f).commit();
+                if (MainActivity.loginstatus==1)
+                {
+                    Fragment f = new PayFragment();
+
+                    gioHangU();
+
+                    FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+                    fm.replace(R.id.fragmentShop, f).commit();
+                }else {
+                    Toast.makeText(getContext(),"Bạn chưa đăng nhập",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
         rcvBill = view.findViewById(R.id.rcvBill);
         rcvBill.setHasFixedSize(true);
         rcvBill.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        //rcvBill.setAdapter(new ShopAdapter(initDataProduct()));
+        rcvBill.setAdapter(new ShopAdapter(gioHang));
 
 
         return view;
+    }
+
+    private void gioHangU() {
+        HoaDon hd=new HoaDon(1);
+        IRetrofitService iRetrofitService = RetrofitBuilder.getClinet().create(IRetrofitService.class);
+        Call<HoaDon> call = iRetrofitService.taoHoaDon(hd);
+        call.enqueue(new Callback<HoaDon>() {
+            @Override
+            public void onResponse(Call<HoaDon> call, retrofit2.Response<HoaDon> response) {
+                if (response.isSuccessful()){
+                    HoaDon nhd= new HoaDon();
+                    nhd.setId(response.body().getId());
+                    Log.d("TAG", "onResponse: "+nhd.getId());
+
+                    Toast.makeText(getContext(), "Successfully!", Toast.LENGTH_SHORT).show();
+                } else {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<HoaDon> call, Throwable t) {
+
+            }
+        });
     }
 
 

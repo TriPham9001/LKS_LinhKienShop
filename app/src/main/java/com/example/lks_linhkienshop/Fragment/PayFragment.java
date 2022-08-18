@@ -39,8 +39,8 @@ public class PayFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        MainActivity a = ((MainActivity) getActivity());
-        a.hideBotomNav();
+        //MainActivity a = ((MainActivity) getActivity());
+        //a.hideBotomNav();
     }
     @Nullable
     @Override

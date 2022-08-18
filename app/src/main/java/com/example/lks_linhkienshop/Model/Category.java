@@ -13,6 +13,10 @@ public class Category {
         this.tenTheLoai = tenTheLoai;
     }
 
+    public Category(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

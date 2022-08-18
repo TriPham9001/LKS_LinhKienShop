@@ -24,6 +24,12 @@ public class SanPham {
         this.discount = donGia- discount;
     }
 
+    public SanPham(int id, String tenSP, Float donGia) {
+        this.id = id;
+        this.tenSP = tenSP;
+        this.donGia = donGia;
+    }
+
     public SanPham(int id) {
         this.id = id;
     }

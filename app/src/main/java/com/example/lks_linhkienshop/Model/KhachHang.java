@@ -6,6 +6,7 @@ public class KhachHang {
     private String diaChi;
     private String matKhau;
     private String soDT;
+    private String idKhachHang;
 
     public KhachHang(int id, String tenKH, String diaChi, String matKhau, String soDT) {
         this.id = id;
@@ -13,6 +14,23 @@ public class KhachHang {
         this.diaChi = diaChi;
         this.matKhau = matKhau;
         this.soDT = soDT;
+    }
+
+    public KhachHang(int id, String tenKH, String diaChi, String matKhau, String soDT, String idKhachHang) {
+        this.id = id;
+        this.tenKH = tenKH;
+        this.diaChi = diaChi;
+        this.matKhau = matKhau;
+        this.soDT = soDT;
+        this.idKhachHang = idKhachHang;
+    }
+
+    public String getIdKhachHang() {
+        return idKhachHang;
+    }
+
+    public void setIdKhachHang(String idKhachHang) {
+        this.idKhachHang = idKhachHang;
     }
 
     public KhachHang() {

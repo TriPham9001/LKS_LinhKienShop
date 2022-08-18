@@ -1,5 +1,7 @@
 package com.example.lks_linhkienshop.Adapter;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lks_linhkienshop.Activity.DetailActivity;
+import com.example.lks_linhkienshop.Activity.ProductByCategoryActivity;
 import com.example.lks_linhkienshop.Model.Category;
 import com.example.lks_linhkienshop.R;
 
@@ -51,7 +55,19 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         public CategoryViewAdapter(@NonNull View iv) {
             super(iv);
             txtTenTheLoai = iv.findViewById(R.id.txtTenTheLoai);
+            iv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    //Log.d("zac", "onClick: "+mListCategory.get(position).getId());
+                    Intent i = new Intent(view.getContext(), ProductByCategoryActivity.class);
+                    i.putExtra("id", mListCategory.get(position).getId());
+                    view.getContext().startActivity(i);
+                }
+            });
         }
+
+
 
     }
 }

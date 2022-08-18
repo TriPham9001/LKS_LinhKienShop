@@ -70,24 +70,14 @@ public class HomeFragment extends Fragment {
     private void rcv(View view) {
         rcvCatagory = view.findViewById(R.id.rcvCategory);
         rcvCatagory.setHasFixedSize(true);
-        rcvCatagory.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        rcvCatagory.setAdapter(new CategoryAdapter(initDataCategory()));
-
         rcvProduct = view.findViewById(R.id.rcvProduct);
         rcvProduct.setHasFixedSize(true);
+        getCategory();
         getSPHotU();
-        //rcvProduct.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        //rcvProduct.setAdapter(new ProductAdapter(initDataProduct()));
-
-
-        //GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
-        //rcvProduct.setLayoutManager(gridLayoutManager);
-        //rcvProduct.setAdapter(new ProductAdapter(initDataProduct()));
 
     }
 
     private void getSPHotU() {
-
         IRetrofitService iRetrofitService = RetrofitBuilder.getClinet().create(IRetrofitService.class);
         Call<List<SanPham>> call = iRetrofitService.sanphamhot();
         call.enqueue(new Callback<List<SanPham>>() {
@@ -110,46 +100,26 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+    private void getCategory() {
+        IRetrofitService iRetrofitService = RetrofitBuilder.getClinet().create(IRetrofitService.class);
+        Call<List<Category>> call = iRetrofitService.getCategory();
+        call.enqueue(new Callback<List<Category>>() {
+            @Override
+            public void onResponse(Call<List<Category>> call, retrofit2.Response<List<Category>> response) {
+                if (response.isSuccessful()){
+                    itemListCategory=response.body();
+                    rcvCatagory.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+                    rcvCatagory.setAdapter(new CategoryAdapter(itemListCategory));
+                } else {
+                    Toast.makeText(getContext(), "Sai TK or MK", Toast.LENGTH_SHORT).show();
 
-    private List<Category> initDataCategory() {
-        itemListCategory = new ArrayList<>();
-        itemListCategory.add(new Category(1, "Mainboard"));
-        itemListCategory.add(new Category(2, "CPU"));
-        itemListCategory.add(new Category(4, "Ram"));
-        itemListCategory.add(new Category(5, "Ổ cứng HDD"));
-        itemListCategory.add(new Category(6, "Ổ cứng SSD"));
-        itemListCategory.add(new Category(7, "VGA Card"));
-        itemListCategory.add(new Category(8, "Sound Card"));
-        itemListCategory.add(new Category(9, "Case"));
-        itemListCategory.add(new Category(10, "Power"));
-        itemListCategory.add(new Category(11, "Fan CPU"));
-        itemListCategory.add(new Category(12, "DVD"));
-        itemListCategory.add(new Category(13, "Keo tán nhiệt"));
+                }
+            }
 
-        return itemListCategory;
+            @Override
+            public void onFailure(Call<List<Category>> call, Throwable t) {
+                Toast.makeText(getContext(), "Sai TK or MK", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
-/*
-    private List<SanPham> initDataProduct() {
-        itemListSanPham = new ArrayList<>();
-        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad", "Mainboard Asus H81M-K", 1390000, "hahahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",true));
-        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","CPU Intel Celeron G5905",1390000,"hahah",false));
-        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","RAM Desktop Kingmax 4GB DDR4 Bus 2666MHz",524825,"hahah",true));
-        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Ổ cứng HDD 2TB Seagate SkyHawk ST2000VX008",1440000,"hahah",false));
-        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Ổ cứng SSD 256GB ADATA SX6000 (ASX6000LNP-256GT-C)",1090000,"hahah",false));
-        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","VGA ASUS DUAL-RTX2060S-O8G-EVO-V2",550000,"hahah",false));
-        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Sound card NEWMB N-EXPS8738",40000,"hahah",true));
-        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","VGA ASUS DUAL-RTX2060S-O8G-EVO-V2",370000,"hahah",true));
-        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Case Jetek Rhino Art - G9323",500000,"hahah",false));
-        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Nguồn Arrow 625W",440000,"hahah",true));
-        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","DVDRW Transcend TS8XDVDS-K",750000,"hahah",true));
-        itemListSanPham.add(new SanPham(R.drawable.cpu,1,2,"asdad","Keo tản nhiệt CoolerMaster MASTERGEL REGULAR",130000,"hahah",false));
-
-        return itemListSanPham;
-    }
-*/
-
-
-
-
 }

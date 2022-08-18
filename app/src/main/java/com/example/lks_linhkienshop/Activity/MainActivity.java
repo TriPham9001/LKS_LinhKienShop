@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView botNav;
     public static int loginstatus =0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -54,15 +54,26 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @Override
     public void onBindViewHolder(@NonNull ProductViewAdapter holder, int position) {
         SanPham sanPham = mListSanPham.get(position);
-        Float price= sanPham.getDonGia() - sanPham.getDiscount();
+        if (sanPham.getDiscount()==null)
+        {
+            Float price= sanPham.getDonGia();
+            holder.txtDonGia.setText(String.valueOf(price));
+            holder.txtDonGiaChuaGiam.setVisibility(View.GONE);
+            holder.txtd.setVisibility(View.GONE);
+        }else
+        {
+            Float price= sanPham.getDonGia() - sanPham.getDiscount();
+            holder.txtDonGia.setText(String.valueOf(price));
+            holder.txtDonGiaChuaGiam.setText(String.valueOf(sanPham.getDonGia()));
+        }
+
         if (sanPham == null) {
             return;
         }
         getImgs(holder, position, sanPham.getId());
         //holder.imgProduct.setImageResource(R.drawable.cpu);
         holder.txtName.setText(sanPham.getTenSP());
-        holder.txtDonGia.setText(String.valueOf(price));
-        holder.txtDonGiaChuaGiam.setText(String.valueOf(sanPham.getDonGia()));
+
     }
 
 
@@ -123,7 +134,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     public class ProductViewAdapter extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView imgProduct;
-        private TextView txtName, txtDonGia, txtDonGiaChuaGiam;
+        private TextView txtName, txtDonGia, txtDonGiaChuaGiam, txtd;
 
         public ProductViewAdapter(@NonNull View iv) {
             super(iv);
@@ -131,6 +142,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             txtName = iv.findViewById(R.id.txtNameProduct);
             txtDonGia = iv.findViewById(R.id.txtDonGia);
             txtDonGiaChuaGiam =iv.findViewById(R.id.txtDonGiaChuaGiam);
+            txtd=iv.findViewById(R.id.txtd);
             iv.setOnClickListener(this);
         }
 

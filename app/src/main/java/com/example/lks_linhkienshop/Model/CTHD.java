@@ -5,17 +5,34 @@ public class CTHD {
     private int idHoaDon;
     private int idSanPham;
     private int soLuong;
+    private String tenSanPham;
+    private float donGia;
 
     //FOREIGN KEY idHoaDon,idSanPham
 
     public CTHD() {
     }
 
-    public CTHD(int id, int idHoaDon, int idSanPham, int soLuong) {
+    public CTHD(int id, int idHoaDon, int idSanPham, int soLuong, String tenSanPham, float donGia) {
         this.id = id;
         this.idHoaDon = idHoaDon;
         this.idSanPham = idSanPham;
         this.soLuong = soLuong;
+        this.tenSanPham = tenSanPham;
+        this.donGia = donGia;
+    }
+
+    public CTHD(int idSanPham, String tenSanPham, float donGia) {
+        this.idSanPham = idSanPham;
+        this.tenSanPham = tenSanPham;
+        this.donGia = donGia;
+    }
+
+    public CTHD(int idSanPham, int soLuong, String tenSanPham, float donGia) {
+        this.idSanPham = idSanPham;
+        this.soLuong = soLuong;
+        this.tenSanPham = tenSanPham;
+        this.donGia = donGia;
     }
 
     public int getId() {
@@ -48,5 +65,21 @@ public class CTHD {
 
     public void setSoLuong(int soLuong) {
         this.soLuong = soLuong;
+    }
+
+    public String getTenSanPham() {
+        return tenSanPham;
+    }
+
+    public void setTenSanPham(String tenSanPham) {
+        this.tenSanPham = tenSanPham;
+    }
+
+    public float getDonGia() {
+        return donGia;
+    }
+
+    public void setDonGia(float donGia) {
+        this.donGia = donGia;
     }
 }

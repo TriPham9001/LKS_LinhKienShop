@@ -1,5 +1,8 @@
 package com.example.lks_linhkienshop.Model;
 
+import com.example.lks_linhkienshop.Fragment.PersonFragment;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class HoaDon {
@@ -9,14 +12,25 @@ public class HoaDon {
     private int idVoucher;
     private String diaChi;
     private int trangThaiHD;
-    private Date ngayMua;
+    private String ngayMua;
 
     //FOREIGN KEY idNhanVien,idKhachHang,idVoucher
+
+
+    public HoaDon(int idVoucher) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        this.idNhanVien = 1;
+        this.idKhachHang = PersonFragment.khachHanginfo.getId();
+        this.idVoucher = idVoucher;
+        this.diaChi = PersonFragment.khachHanginfo.getDiaChi();
+        this.ngayMua = formatter.format(date);
+    }
 
     public HoaDon() {
     }
 
-    public HoaDon(int id, int idNhanVien, int idKhachHang, int idVoucher, String diaChi, int trangThaiHD, Date ngayMua) {
+    public HoaDon(int id, int idNhanVien, int idKhachHang, int idVoucher, String diaChi, int trangThaiHD, String ngayMua) {
         this.id = id;
         this.idNhanVien = idNhanVien;
         this.idKhachHang = idKhachHang;
@@ -74,11 +88,11 @@ public class HoaDon {
         this.trangThaiHD = trangThaiHD;
     }
 
-    public Date getNgayMua() {
+    public String getNgayMua() {
         return ngayMua;
     }
 
-    public void setNgayMua(Date ngayMua) {
+    public void setNgayMua(String ngayMua) {
         this.ngayMua = ngayMua;
     }
 }
